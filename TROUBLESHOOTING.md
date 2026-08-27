@@ -1,0 +1,76 @@
+# Troubleshooting
+
+Use the smallest relevant fix. This workshop needs no package installation and no API key.
+
+## `node` or `npm` is not found
+
+- Run `node --version` and `npm --version` in a newly opened terminal.
+- Install the current LTS release from the official [Node.js download page](https://nodejs.org/en/download/).
+- macOS: use the `.pkg`, then quit and reopen Terminal.
+- Windows: use the `.msi` with the default PATH option, then close and reopen PowerShell or Windows Terminal. Restart Windows if the old terminal environment persists.
+- Confirm Node is v22 or newer.
+
+## PowerShell blocks `npm.ps1`
+
+Do not change a university-managed execution policy. Use the Windows command shims instead:
+
+```powershell
+npm.cmd run preflight
+npm.cmd test
+npm.cmd start
+```
+
+## Preflight says a file is missing
+
+Confirm you are in the repository root:
+
+```bash
+pwd
+```
+
+In PowerShell, use:
+
+```powershell
+Get-Location
+```
+
+The folder should contain `package.json`, `CHALLENGE.md`, `src`, and `tests`. If it does not, `cd` into the cloned `codex-fix-the-glitch` folder. If files are genuinely missing, clone a fresh copy rather than inventing replacements.
+
+## Port 4173 is already in use
+
+Start on another local port:
+
+```bash
+npm start -- --port 4174
+```
+
+Then open <http://127.0.0.1:4174>.
+
+## The browser shows an old version
+
+- Confirm the terminal still shows the server running.
+- Use a normal refresh first, then a hard refresh if necessary.
+- Check that the browser URL uses the same port printed by `npm start`.
+- Do not open `index.html` directly from Finder or File Explorer; use the local `http://127.0.0.1` address.
+
+## Codex cannot see the files
+
+- In the desktop app, open the cloned repository folder itself, not its parent or a ZIP archive.
+- Confirm `src/game-engine.mjs` appears in the selected project.
+- Start a new Codex task after selecting the correct folder.
+- If sign-in or Codex access is unavailable, tell the instructor; do not enter someone else's credentials or an unapproved API key.
+
+## Tests do not match the expected starter counts
+
+Before the exercise, the starter must show five passing tests, zero failures, and one TODO.
+
+```bash
+git status --short
+git diff
+```
+
+If you have not begun and the working tree is changed, ask the instructor whether to restore it or make a fresh clone. Do not run destructive Git commands on work you want to keep.
+
+## The server will not stop
+
+Return to the terminal where it is running and press `Ctrl+C`. Closing that terminal also ends the local server. The server listens only on `127.0.0.1`, so it is not exposed to other machines on the network.

@@ -1,0 +1,15 @@
+{
+  "name": "codex-fix-the-glitch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A small, dependency-free Codex debugging workshop for university computer science students.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "preflight": "node scripts/preflight.mjs",
+    "test": "node --test",
+    "start": "node scripts/start-server.mjs"
+  }
+}

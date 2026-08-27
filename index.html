@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>Bug Blaster</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#game">Skip to game</a>
+
+    <main id="game" class="game-shell">
+      <header class="hero">
+        <p class="eyebrow">Fix the Glitch</p>
+        <h1>Bug Blaster</h1>
+        <p id="game-help" class="intro">
+          Find the bug before the clock reaches zero. Use Tab and Enter or Space,
+          or move around the grid with the arrow keys.
+        </p>
+      </header>
+
+      <section class="hud" aria-label="Game statistics">
+        <div class="stat-card">
+          <span class="stat-label">Time</span>
+          <output id="time-output" class="stat-value" aria-label="Seconds remaining">20 s</output>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Score</span>
+          <output id="score-output" class="stat-value" aria-label="Current score">0 points</output>
+        </div>
+      </section>
+
+      <div class="controls" aria-label="Game controls">
+        <button id="start-button" class="control control-start" type="button">Start</button>
+        <button id="restart-button" class="control control-restart" type="button" disabled>Restart</button>
+        <button id="stop-button" class="control control-stop" type="button" disabled>Stop</button>
+      </div>
+
+      <p id="round-status" class="round-status" role="status" aria-live="polite" aria-atomic="true">
+        Ready. Press Start when you are set.
+      </p>
+
+      <div
+        id="board"
+        class="game-board"
+        role="group"
+        aria-label="Four by four Bug Blaster grid"
+        aria-describedby="game-help"
+      ></div>
+
+      <p class="workshop-note">
+        Something odd happens after repeated restarts. Your debugging mission is in
+        <a href="./CHALLENGE.md">CHALLENGE.md</a>.
+      </p>
+    </main>
+
+    <script type="module" src="./src/app.mjs"></script>
+  </body>
+</html>

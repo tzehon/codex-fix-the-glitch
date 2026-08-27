@@ -1,0 +1,235 @@
+:root {
+  color: #111827;
+  background: #111827;
+  font-family: Inter, ui-rounded, "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-synthesis: none;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem 1rem;
+  background:
+    radial-gradient(circle at top left, #312e81 0, transparent 38rem),
+    #111827;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 10;
+  padding: 0.7rem 1rem;
+  color: #111827;
+  background: #fbbf24;
+  font-weight: 800;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.game-shell {
+  width: min(100%, 42rem);
+  margin: 0 auto;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  border: 4px solid #111827;
+  border-radius: 1.5rem;
+  background: #f8fafc;
+  box-shadow: 0.75rem 0.75rem 0 #fbbf24;
+}
+
+.hero {
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #5b21b6;
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0.15rem 0 0.4rem;
+  font-size: clamp(2.2rem, 8vw, 4.25rem);
+  line-height: 1;
+}
+
+.intro {
+  max-width: 35rem;
+  margin: 0.75rem auto 1.5rem;
+}
+
+.hud {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.stat-card {
+  padding: 0.8rem 1rem;
+  border: 3px solid #111827;
+  border-radius: 0.75rem;
+  background: #ede9fe;
+  text-align: center;
+}
+
+.stat-label,
+.stat-value {
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-size: 1.55rem;
+  font-weight: 900;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+button {
+  border: 3px solid #111827;
+  border-radius: 0.65rem;
+  font: inherit;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 4px solid #111827;
+  outline-offset: 3px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(0.7);
+  opacity: 0.55;
+}
+
+.control {
+  min-height: 3rem;
+  padding: 0.55rem 0.7rem;
+  color: #fff;
+}
+
+.control:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+
+.control-start {
+  background: #166534;
+}
+
+.control-restart {
+  background: #1d4ed8;
+}
+
+.control-stop {
+  background: #b91c1c;
+}
+
+.round-status {
+  min-height: 3.25rem;
+  margin: 1rem 0;
+  padding: 0.7rem 0.9rem;
+  border-left: 0.45rem solid #5b21b6;
+  background: #f3f4f6;
+  font-weight: 750;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.55rem;
+}
+
+.cell {
+  aspect-ratio: 1;
+  min-width: 0;
+  color: #374151;
+  background: #fff;
+  font-size: clamp(0.8rem, 3vw, 1.1rem);
+}
+
+.cell:not(:disabled):hover {
+  background: #e0e7ff;
+}
+
+.cell.is-bug {
+  color: #111827;
+  background: #fbbf24;
+  box-shadow: inset 0 0 0 3px #fff;
+  animation: bug-pop 450ms ease-out;
+}
+
+.workshop-note {
+  margin: 1.25rem 0 0;
+  color: #374151;
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+.workshop-note a {
+  color: #4338ca;
+  font-weight: 800;
+}
+
+@keyframes bug-pop {
+  0% {
+    transform: scale(0.82);
+  }
+  70% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 30rem) {
+  body {
+    padding: 1rem 0.65rem;
+  }
+
+  .game-shell {
+    border-radius: 1rem;
+    box-shadow: 0.4rem 0.4rem 0 #fbbf24;
+  }
+
+  .controls {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
