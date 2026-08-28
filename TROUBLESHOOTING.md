@@ -20,6 +20,10 @@ npm.cmd test
 npm.cmd start
 ```
 
+## npm says `Unknown command: "preflight"`
+
+Use `npm run preflight`. The `run` keyword is required for package scripts; `npm preflight` is not the workshop command.
+
 ## Preflight says a file is missing
 
 Confirm you are in the repository root:

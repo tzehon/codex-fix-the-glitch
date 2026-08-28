@@ -87,7 +87,7 @@ Also confirm that:
 
 ## 7. Correct once if needed, then debrief (minutes 27–30)
 
-If your evidence shows a remaining defect, give Codex at most one short correction prompt quoting that evidence. Rerun the tests and manual check, then finish [WORKSHEET.md](WORKSHEET.md).
+If your evidence shows a remaining defect, give Codex at most one short correction prompt quoting that evidence. Rerun the tests and manual check, then record your root cause and final evidence in [WORKSHEET.md](WORKSHEET.md).
 
 ## Success criteria
 
@@ -99,4 +99,4 @@ If your evidence shows a remaining defect, give Codex at most one short correcti
 - All six tests pass with no TODOs.
 - You can explain the root cause, fix, and regression test in your own words.
 
-Finished early? See the optional extension in [WORKSHEET.md](WORKSHEET.md). Do not add extra production features until the required fix is verified.
+Finished early? Explain why the injected fake scheduler makes a better regression test than real-time waiting. Do not add extra production features until the required fix is verified.
