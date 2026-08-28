@@ -1,6 +1,6 @@
 # Prompt for Codex
 
-Copy everything inside the block into a new Codex task opened on this repository.
+Copy everything inside the block into a new Codex chat opened on this repository.
 
 ```text
 Fix this Glitch Squadron defect:

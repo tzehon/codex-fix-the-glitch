@@ -33,11 +33,11 @@ This reproduction does not require quick reflexes. Record the visible Time and t
 
 ## 3. Write a hypothesis (minutes 8–10)
 
-Write a one-sentence hypothesis in [WORKSHEET.md](WORKSHEET.md) **before** opening Codex. A hypothesis can be wrong; it just needs to be specific enough to investigate.
+Write a one-sentence hypothesis in [WORKSHEET.md](WORKSHEET.md) **before** sending the prompt to Codex. A hypothesis can be wrong; it just needs to be specific enough to investigate.
 
 ## 4. Give Codex one bounded task (minutes 10–19)
 
-Open this repository folder in Codex Desktop. Copy the prompt from [STUDENT_PROMPT.md](STUDENT_PROMPT.md) into a new Codex task.
+In the ChatGPT desktop app, select this clone under **Projects**, choose **Codex** from the ChatGPT dropdown, then start **New chat** in the **Local** environment. Copy the prompt from [STUDENT_PROMPT.md](STUDENT_PROMPT.md) into that chat.
 
 Codex may change only:
 

@@ -73,9 +73,10 @@ After your fix, `npm test` must show six passes and zero TODOs. If it does but t
 
 ## Codex cannot see the files
 
-- In the desktop app, open the cloned repository folder itself, not its parent or a ZIP archive.
-- Confirm `src/game-engine.mjs` appears in the selected project.
-- Start a new Codex task after selecting the correct folder.
+- Under **Projects**, select the cloned `codex-fix-the-glitch` folder. If it is missing, add that folder as a local project; do not choose its parent, a ZIP archive, or the instructor companion.
+- Open the **ChatGPT dropdown** and select **Codex**.
+- With the student project selected, choose **New chat** and the **Local** environment.
+- Confirm `AGENTS.md` and `src/game-engine.mjs` appear before sending the prompt.
 - If sign-in or Codex access is unavailable, tell the instructor; do not enter someone else's credentials or an unapproved API key.
 
 ## Tests do not match the expected starter counts

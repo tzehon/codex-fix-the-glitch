@@ -96,20 +96,22 @@ If `node: command not found` appears, close every Terminal window and open a new
 
 If PowerShell says `node` is not recognized, restart the terminal first, then restart Windows if necessary. If PowerShell blocks `npm.ps1`, use `npm.cmd test`, `npm.cmd run preflight`, and `npm.cmd start` for this workshop; you do not need to change your execution policy.
 
-## Set up Codex Desktop
+## Set up Codex in the ChatGPT desktop app
 
 OpenAI's [official desktop quickstart](https://learn.chatgpt.com/docs/quickstart) is the source of truth for current installation and sign-in steps.
 
 1. Download and install the ChatGPT desktop app for your operating system from the quickstart page.
 2. Open it and sign in with the ChatGPT account approved for your class.
-3. Choose **Open folder** and select this cloned `codex-fix-the-glitch` folder.
-4. Select **Codex** from the product dropdown for the coding task.
-5. Choose the **Local** environment so Codex works directly in this clone.
-6. Leave **Fast mode** off to conserve usage. If Luna is available and your instructor approves it, use it for this focused task.
+3. Under **Projects**, select the cloned `codex-fix-the-glitch` folder. If it is not listed, use the app's option to open a folder and add that folder as a **local project**. Do not select the parent kit, a ZIP file, or the instructor companion.
+4. Open the **ChatGPT dropdown** and select **Codex**. If the app already shows Codex, stay there.
+5. In that local project, choose **New chat**.
+6. For this new chat, choose the **Local** environment so Codex edits this clone directly. Do not choose Worktree or Cloud for this exercise.
+7. Confirm the selected project contains `AGENTS.md`, `CHALLENGE.md`, `src`, and `tests`.
+8. Leave **Fast mode** off to conserve usage. If Luna is available and your instructor approves it, select it for this focused task.
 
-The desktop app can work with local folders and uses the folder you select as its codebase context. See the official [Codex environments guide](https://learn.chatgpt.com/docs/environments/modes) for the current Local, Worktree, and Cloud choices. Account and model availability can vary, so complete this check before the session.
+The official [projects guide](https://learn.chatgpt.com/docs/projects) explains local projects, and the [Codex environments guide](https://learn.chatgpt.com/docs/environments/modes) explains Local, Worktree, and Cloud. Account, model, and exact control availability can vary, so complete this check before the session.
 
-To keep usage low, give Codex the one bounded prompt supplied in this repository. Use at most one short correction based on concrete test or browser evidence. No exact credit amount is promised because usage and account limits vary; see OpenAI's current [Codex pricing guidance](https://learn.chatgpt.com/docs/pricing).
+At minute 10, paste the one bounded prompt from [STUDENT_PROMPT.md](STUDENT_PROMPT.md) into that new chat. To keep usage low, use at most one short correction based on concrete test or browser evidence. No exact credit amount is promised because usage and account limits vary; see OpenAI's current [Codex pricing guidance](https://learn.chatgpt.com/docs/pricing).
 
 ## Repository map
 
