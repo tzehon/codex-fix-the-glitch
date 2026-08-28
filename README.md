@@ -128,7 +128,7 @@ At minute 10, paste the one bounded prompt from [STUDENT_PROMPT.md](STUDENT_PROM
 │   ├── app.mjs               Browser wiring
 │   └── game-engine.mjs       Testable game logic
 └── tests/
-    ├── fake-scheduler.mjs    Deterministic timer test double
+    ├── fake-scheduler.mjs    Deterministic test helper
     └── game-engine.test.mjs  Five tests and one TODO
 ```
 

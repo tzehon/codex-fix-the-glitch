@@ -15,8 +15,8 @@ This repository is a deliberately small debugging exercise. Follow these rules f
 
 ## Required verification
 
-- The regression test must perform repeated Restarts and prove exactly one active game loop remains.
-- One fake scheduler tick must decrease Time by exactly one second and move the invader by exactly one row. Do not use real waiting.
+- The regression test must perform repeated Restarts, advance the existing `FakeScheduler` once, and verify that Time decreases by exactly one second and the invader moves by exactly one row.
+- Do not use real waiting.
 - Run `npm test` after making changes.
 - Stop only when all six tests pass and there are no TODO tests.
 - Summarize the root cause, the exact change, and how the new test proves the fix.

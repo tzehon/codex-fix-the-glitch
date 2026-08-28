@@ -14,11 +14,11 @@ Keep each answer to one or two sentences. You may write here or use paper.
 
 ## After Codex
 
-3. **Root cause and fix:** What survived Restart, and what was the smallest production change?
+3. **Root cause and fix:** What caused the observed behavior, and what was the smallest production change?
 
    >
 
-4. **Diff and test evidence:** Record the changed files and final `npm test` counts. In one sentence, explain how the `FakeScheduler` test proves there is one loop and one frame per tick.
+4. **Diff and test evidence:** Record the changed files and final `npm test` counts. In one sentence, explain how the `FakeScheduler` test verifies ordinary pacing after repeated Restarts.
 
    > pass: / fail: / todo:
    >

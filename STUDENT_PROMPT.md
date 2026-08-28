@@ -16,9 +16,9 @@ Please inspect the existing implementation and tests, then:
 2. Make the smallest reasonable production fix in src/game-engine.mjs.
 3. Replace the behavior-named test.todo in tests/game-engine.test.mjs with one
    deterministic regression test using the existing FakeScheduler. The test
-   must prove repeated restarts leave one active game loop and one fake tick
-   decreases the countdown by one second and moves the invader by one row. Do
-   not use real waiting.
+   must perform repeated Restarts, advance the FakeScheduler once, and verify
+   that the countdown decreases by exactly one second and the invader moves
+   by exactly one row. Do not use real waiting.
 4. Run npm test and stop only when all six tests pass with no TODOs.
 5. Summarize the files changed and tell me what to inspect in the complete diff.
 

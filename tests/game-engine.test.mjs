@@ -121,4 +121,4 @@ test("stop and ordinary game-over clear the active loop", () => {
   assert.equal(finishedScheduler.activeCount, 0);
 });
 
-test.todo("repeated Restart keeps one loop and advances one frame per tick");
+test.todo("repeated Restart does not speed up the round");

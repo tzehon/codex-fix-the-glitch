@@ -59,7 +59,7 @@ Check that:
 - Only the two allowed files changed.
 - The production fix is focused rather than a rewrite.
 - The existing behavior-named `test.todo` became a deterministic test using `FakeScheduler`.
-- The regression test proves repeated Restarts leave one active loop and one fake tick advances Time and the invader exactly once.
+- After repeated Restarts, advancing `FakeScheduler` once decreases Time by one second and moves the invader by one row.
 - No test was deleted, skipped, weakened, or made dependent on real waiting.
 - The `GlitchSquadronGame` public API and exact snapshot shape remain unchanged.
 - No package or unrelated feature was added.
@@ -92,9 +92,8 @@ If your evidence shows a remaining defect, give Codex at most one short correcti
 ## Success criteria
 
 - The hyper-speed symptom no longer occurs after any number of Restarts.
-- Exactly one game loop is active during a round.
 - One elapsed second produces one countdown tick and one invader step.
-- Stopping or finishing a round leaves no active loop.
+- After Stop or time expiry, further elapsed time does not change the round.
 - Steering, firing, scoring, breaches, and respawning still work.
 - All six tests pass with no TODOs.
 - You can explain the root cause, fix, and regression test in your own words.
