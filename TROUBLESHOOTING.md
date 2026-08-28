@@ -73,7 +73,7 @@ After your fix, `npm test` should show all six tests passing. If the browser sti
 
 ## Codex cannot see the files
 
-- Under **Projects**, select the cloned `codex-fix-the-glitch` folder. If it is missing, add that folder as a local project; do not choose its parent, a ZIP archive, or the instructor companion.
+- Under **Projects**, select the cloned `codex-fix-the-glitch` folder. If it is missing, add that folder as a local project; do not choose its parent or a ZIP archive.
 - Open the **ChatGPT dropdown** and select **Codex**.
 - With the student project selected, choose **New chat** and the **Local** environment.
 - Confirm the project files appear before sending the prompt.

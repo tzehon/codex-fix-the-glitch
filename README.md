@@ -102,7 +102,7 @@ OpenAI's [official desktop quickstart](https://learn.chatgpt.com/docs/quickstart
 
 1. Download and install the ChatGPT desktop app for your operating system from the quickstart page.
 2. Open it and sign in with the ChatGPT account approved for your class.
-3. Under **Projects**, select the cloned `codex-fix-the-glitch` folder. If it is not listed, use the app's option to open a folder and add that folder as a **local project**. Do not select the parent kit, a ZIP file, or the instructor companion.
+3. Under **Projects**, select the cloned `codex-fix-the-glitch` folder. If it is not listed, use the app's option to open a folder and add that folder as a **local project**. Do not select the parent kit or a ZIP file.
 4. Open the **ChatGPT dropdown** and select **Codex**. If the app already shows Codex, stay there.
 5. In that local project, choose **New chat**.
 6. For this new chat, choose the **Local** environment so Codex edits this clone directly. Do not choose Worktree or Cloud for this exercise.
