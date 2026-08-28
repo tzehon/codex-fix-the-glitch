@@ -69,24 +69,26 @@ Then open <http://127.0.0.1:4174>.
 
 On the untouched starter, this is the **intended defect for the challenge**. Do not refresh it away during the measured reproduction. Record the Time and invader telemetry, write your hypothesis, and then follow [CHALLENGE.md](CHALLENGE.md).
 
-After your fix, `npm test` must show six passes and zero TODOs. If it does but the browser still runs too fast, stop and restart `npm start`, refresh the page, inspect the complete diff, and give Codex at most one evidence-based correction.
+After your fix, `npm test` should show all six tests passing. If the browser still runs too fast, stop and restart `npm start`, refresh the page, review every change, and give Codex at most one correction based on what you observed.
 
 ## Codex cannot see the files
 
 - Under **Projects**, select the cloned `codex-fix-the-glitch` folder. If it is missing, add that folder as a local project; do not choose its parent, a ZIP archive, or the instructor companion.
 - Open the **ChatGPT dropdown** and select **Codex**.
 - With the student project selected, choose **New chat** and the **Local** environment.
-- Confirm `AGENTS.md` and `src/game-engine.mjs` appear before sending the prompt.
+- Confirm the project files appear before sending the prompt.
 - If sign-in or Codex access is unavailable, tell the instructor; do not enter someone else's credentials or an unapproved API key.
 
 ## Tests do not match the expected starter counts
 
-Before the exercise, the starter must show five passing tests, zero failures, and one TODO.
+Before the exercise, `npm test` should show no failures: five tests pass and one is deliberately unfinished.
 
 ```bash
 git status --short
 git diff
 ```
+
+These commands only display your current changes; they do not alter files.
 
 If you have not begun and the working tree is changed, ask the instructor whether to restore it or make a fresh clone. Do not run destructive Git commands on work you want to keep.
 

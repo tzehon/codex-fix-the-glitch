@@ -27,8 +27,8 @@ The countdown and invader position are not live-announced every second because c
 - The interface honors the operating system's **Reduce Motion** preference.
 - The laser is an instant high-contrast flash; no essential information depends on motion or a long animation.
 - Scoring is optional. To reproduce the defect, press Start → Restart → Restart and observe the textual Time and invader telemetry without steering or firing.
-- The deterministic `FakeScheduler` regression test requires no real waiting or quick reaction.
-- Students who need more time may use only the telemetry-and-test path, pause the browser portion, or work with an instructor or partner reading state changes aloud.
+- The automated test runs without real-time waiting or quick reactions.
+- Students who need more time may use only the text-and-automated-test path, pause the browser portion, or work with an instructor or partner reading state changes aloud.
 
 ## Color and hearing
 

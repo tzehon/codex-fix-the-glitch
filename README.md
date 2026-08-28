@@ -8,9 +8,9 @@ Glitch Squadron is a small top-down shooter with five lanes and seven rows. Stee
 
 - Reproduce a bug before changing code.
 - State expected and actual behavior precisely.
-- Give a coding agent a narrow, testable task.
-- Inspect a code diff instead of accepting it blindly.
-- Use a deterministic regression test to verify a fix.
+- Give Codex a focused task with a clear result.
+- Review everything Codex changes instead of accepting it blindly.
+- Add an automated check that catches the bug if it returns.
 
 Allow about 30 minutes. Start with [CHALLENGE.md](CHALLENGE.md) after setup.
 
@@ -51,7 +51,7 @@ After npm's package-script banner, `npm run preflight` prints:
 Preflight passed. You are ready to start the challenge.
 ```
 
-`npm test` should report **6 tests, 5 passes, 0 failures, and 1 TODO**. Node may prefix its summary lines with `#`, and the symbols and spacing can differ between Node versions.
+`npm test` should finish with no failures. Its summary shows **6 tests: 5 pass and 1 is deliberately unfinished**, which Node labels `TODO`. Node may prefix its summary lines with `#`, and the symbols and spacing can differ between Node versions.
 
 Finally, `npm start` stays running and prints:
 
@@ -127,9 +127,7 @@ At minute 10, paste the one bounded prompt from [STUDENT_PROMPT.md](STUDENT_PROM
 ├── src/
 │   ├── app.mjs               Browser wiring
 │   └── game-engine.mjs       Testable game logic
-└── tests/
-    ├── fake-scheduler.mjs    Deterministic test helper
-    └── game-engine.test.mjs  Five tests and one TODO
+└── tests/                    Automated checks for the game
 ```
 
 ## Begin the challenge

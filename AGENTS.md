@@ -5,8 +5,8 @@ This repository is a deliberately small debugging exercise. Follow these rules f
 ## Allowed changes
 
 - You may edit only `src/game-engine.mjs` and `tests/game-engine.test.mjs`.
-- Make the smallest production change that fixes the reported repeated-Restart behavior.
-- Replace the existing behavior-named `test.todo` with one deterministic regression test using the existing `FakeScheduler`.
+- Make the smallest code change that fixes the reported repeated-Restart behavior.
+- Complete the unfinished test with one focused automated test that would have caught the reported behavior.
 - Preserve the exported `GlitchSquadronGame` class.
 - Preserve constructor options `durationSeconds`, `laneCount`, `travelRows`, `scheduler`, `random`, and `onChange`.
 - Preserve public methods `start()`, `restart()`, `moveLeft()`, `moveRight()`, `fire()`, and `stop()`.
@@ -15,11 +15,12 @@ This repository is a deliberately small debugging exercise. Follow these rules f
 
 ## Required verification
 
-- The regression test must perform repeated Restarts, advance the existing `FakeScheduler` once, and verify that Time decreases by exactly one second and the invader moves by exactly one row.
-- Do not use real waiting.
+- The new test must reproduce repeated Restarts and fail on the untouched starter.
+- Keep the test fast and reliable; do not wait for real time.
 - Run `npm test` after making changes.
 - Stop only when all six tests pass and there are no TODO tests.
-- Summarize the root cause, the exact change, and how the new test proves the fix.
+- Summarize the root cause, the exact change, and how the new test would catch the problem if it returned.
+- Explain the result in plain language and define any testing term you must use.
 - Tell the student to review the complete diff before accepting the work.
 
 ## Boundaries

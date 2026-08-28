@@ -8,7 +8,7 @@ Keep each answer to one or two sentences. You may write here or use paper.
 
    >
 
-2. **Hypothesis:** Why might repeated Restarts make both Time and the invader advance too quickly, and what would you inspect first?
+2. **Hypothesis:** What is your best guess about why repeated Restarts make the game run too quickly?
 
    >
 
@@ -18,14 +18,14 @@ Keep each answer to one or two sentences. You may write here or use paper.
 
    >
 
-4. **Diff and test evidence:** Record the changed files and final `npm test` counts. In one sentence, explain how the `FakeScheduler` test verifies ordinary pacing after repeated Restarts.
+4. **Evidence:** What did Codex change, what did `npm test` report, and how does the new test show that repeated Restart is fixed?
 
-   > pass: / fail: / todo:
+   > npm test result:
    >
-   > files changed:
+   > what changed:
    >
-   > test evidence:
+   > what the new test showed:
 
-5. **Final verification:** What did repeated Restart and ordinary gameplay show, and what did you verify yourself instead of trusting Codex or a green test result?
+5. **Final verification:** What did repeated Restart and ordinary gameplay show, and what did you verify yourself instead of trusting Codex or a passing test result?
 
    >

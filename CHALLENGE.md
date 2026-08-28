@@ -12,7 +12,7 @@ npm test
 npm start
 ```
 
-Open <http://127.0.0.1:4173>. The starter suite should show five passing tests and one TODO, with no failures.
+Open <http://127.0.0.1:4173>. `npm test` should finish with no failures: five checks pass and one is deliberately unfinished.
 
 Press **Start**. Use Left/Right or A/D to steer and Space/Enter to fire. The visible Move Left, Fire, and Move Right buttons provide the same actions. In ordinary play, Time should drop once and the invader should descend one row per real second.
 
@@ -39,30 +39,25 @@ Write a one-sentence hypothesis in [WORKSHEET.md](WORKSHEET.md) **before** sendi
 
 In the ChatGPT desktop app, select this clone under **Projects**, choose **Codex** from the ChatGPT dropdown, then start **New chat** in the **Local** environment. Copy the prompt from [STUDENT_PROMPT.md](STUDENT_PROMPT.md) into that chat.
 
-Codex may change only:
-
-- `src/game-engine.mjs`
-- `tests/game-engine.test.mjs`
+The repository includes rules that keep Codex focused on the relevant code. Let Codex inspect the project and decide how to approach the task.
 
 Let it complete one primary attempt. If verification exposes a problem, use at most one short correction prompt that describes the evidence.
 
-## 5. Review the complete diff and test (minutes 19–24)
+## 5. Review what changed and run the checks (minutes 19–24)
 
-Before accepting the result, inspect the **complete diff** in Codex or run:
+Open Codex's changes view and inspect every changed line. This before-and-after view is called a **diff**. If you prefer the terminal, run:
 
 ```bash
-git diff -- src/game-engine.mjs tests/game-engine.test.mjs
+git status --short
+git diff
 ```
 
 Check that:
 
-- Only the two allowed files changed.
-- The production fix is focused rather than a rewrite.
-- The existing behavior-named `test.todo` became a deterministic test using `FakeScheduler`.
-- After repeated Restarts, advancing `FakeScheduler` once decreases Time by one second and moves the invader by one row.
-- No test was deleted, skipped, weakened, or made dependent on real waiting.
-- The `GlitchSquadronGame` public API and exact snapshot shape remain unchanged.
-- No package or unrelated feature was added.
+- The change is small and directly related to the bug.
+- Codex added a test that would catch the repeated-Restart problem if it returned.
+- The original tests are still present and still pass.
+- No packages, unrelated features, or unrelated files were added.
 
 If you cannot explain a changed line, ask Codex what it does before moving on.
 
@@ -72,7 +67,7 @@ Run:
 npm test
 ```
 
-Success means six passing tests, zero failures, and zero TODOs.
+Success means all six tests pass, with no failures or unfinished tests.
 
 ## 6. Verify in the browser (minutes 24–27)
 
@@ -95,7 +90,7 @@ If your evidence shows a remaining defect, give Codex at most one short correcti
 - One elapsed second produces one countdown tick and one invader step.
 - After Stop or time expiry, further elapsed time does not change the round.
 - Steering, firing, scoring, breaches, and respawning still work.
-- All six tests pass with no TODOs.
-- You can explain the root cause, fix, and regression test in your own words.
+- All six tests pass.
+- You can explain the cause, the code change, and the new test in your own words.
 
-Finished early? Explain why the injected fake scheduler makes a better regression test than real-time waiting. Do not add extra production features until the required fix is verified.
+Finished early? Explain why an automated test is more reliable than timing the game by hand. Do not add extra production features until the required fix is verified.
