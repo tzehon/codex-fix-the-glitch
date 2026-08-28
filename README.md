@@ -1,8 +1,8 @@
-# Codex: Fix the Glitch
+# Codex: Fix the Glitch — Glitch Squadron
 
-Welcome to a short, hands-on debugging challenge. You will investigate a visible bug in **Bug Blaster**, form a hypothesis, ask Codex for one bounded change, and verify the result yourself.
+Welcome to a short, hands-on debugging challenge. You will investigate a visible defect in **Glitch Squadron**, form a hypothesis, ask Codex for one bounded change, and verify the result yourself.
 
-The project is intentionally tiny and uses only Node.js built-ins plus browser-native HTML, CSS, and JavaScript. There is no `npm install`, backend, API key, or external network access; `npm start` serves only this folder on your own computer.
+Glitch Squadron is a small top-down shooter with five lanes and seven rows. Steer the ship left or right, line up with the descending invader, and fire before it breaches the bottom row. The project uses only Node.js built-ins plus browser-native HTML, CSS, and JavaScript. There is no `npm install`, backend, API key, or external network access; `npm start` serves only this folder on your own computer.
 
 ## What you will practice
 
@@ -14,12 +14,21 @@ The project is intentionally tiny and uses only Node.js built-ins plus browser-n
 
 Allow about 30 minutes. Start with [CHALLENGE.md](CHALLENGE.md) after setup.
 
+## How to play
+
+- Press **Start** to begin a 20-second round.
+- Use **Left Arrow**/**A** and **Right Arrow**/**D**, or the visible Move buttons, to steer.
+- Use **Space**/**Enter**, or the visible Fire button, to shoot.
+- A hit scores one point and spawns another invader.
+- An invader that reaches the player's row adds one **Breach** and respawns. The round continues until time reaches zero or you press **Stop**.
+
+The Time, Score, Breaches, and telemetry text make the game state observable without relying on animation or reaction speed.
+
 ## Quick start
 
 You need Git, Node.js 22 or newer, a modern browser, and access to Codex in the ChatGPT desktop app.
 
-Clone this repository using the URL your instructor provides. Then, from the
-cloned repository:
+Clone this repository using the URL your instructor provides. Then, from the cloned repository:
 
 ```bash
 cd codex-fix-the-glitch
@@ -84,9 +93,11 @@ OpenAI's [official desktop quickstart](https://learn.chatgpt.com/docs/quickstart
 2. Open it and sign in with the ChatGPT account approved for your class.
 3. Choose **Open folder** and select this cloned `codex-fix-the-glitch` folder.
 4. Select **Codex** from the product dropdown for the coding task.
-5. Keep the app in its normal/Standard mode unless your instructor says otherwise.
+5. Keep the app in its normal/Standard mode unless your instructor says otherwise. If Luna is available and your instructor approves it, use it for this focused task.
 
-The desktop app is available on macOS and Windows, can work with local folders, and uses the folder you select as its codebase context. Account availability can vary, so complete this check before the session.
+The desktop app can work with local folders and uses the folder you select as its codebase context. Account and model availability can vary, so complete this check before the session.
+
+To keep usage low, give Codex the one bounded prompt supplied in this repository. Use at most one short correction based on concrete test or browser evidence. No exact credit amount is promised because usage and account limits vary; see OpenAI's current [Codex pricing guidance](https://learn.chatgpt.com/docs/pricing).
 
 ## Repository map
 
@@ -109,14 +120,15 @@ The desktop app is available on macOS and Windows, can work with local folders, 
 
 ## Completion checklist
 
-- [ ] I reproduced the bug and wrote expected versus actual behavior.
+- [ ] I reproduced Start → Restart → Restart and recorded expected versus actual time and invader movement.
 - [ ] I wrote a hypothesis before asking Codex.
 - [ ] Codex changed only `src/game-engine.mjs` and `tests/game-engine.test.mjs`.
 - [ ] The production change is small and addresses the root cause.
-- [ ] The TODO became a deterministic regression test.
+- [ ] The TODO became a deterministic `FakeScheduler` regression test.
 - [ ] `npm test` reports six passing tests, zero failures, and zero TODOs.
 - [ ] I inspected the complete diff.
-- [ ] I manually repeated the Restart sequence and the countdown stayed correct.
+- [ ] I manually repeated several Restarts and confirmed one countdown tick and one invader step per real second.
+- [ ] Steering, firing, scoring, breaches, Stop, and time expiry still work.
 - [ ] I completed the reflection in [WORKSHEET.md](WORKSHEET.md).
 
 If setup fails, use [TROUBLESHOOTING.md](TROUBLESHOOTING.md) or ask your instructor before spending workshop time reinstalling tools.

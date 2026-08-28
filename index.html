@@ -3,35 +3,39 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="color-scheme" content="light">
-    <title>Bug Blaster</title>
+    <meta name="color-scheme" content="dark">
+    <title>Glitch Squadron</title>
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
     <a class="skip-link" href="#game">Skip to game</a>
 
-    <main id="game" class="game-shell">
+    <main id="game" class="game-shell" tabindex="-1">
       <header class="hero">
         <p class="eyebrow">Fix the Glitch</p>
-        <h1>Bug Blaster</h1>
+        <h1>Glitch Squadron</h1>
         <p id="game-help" class="intro">
-          Find the bug before the clock reaches zero. Use Tab and Enter or Space,
-          or move around the grid with the arrow keys.
+          Hold the line for 20 seconds. Steer with Left/Right or A/D and fire with
+          Space/Enter. You can also use the on-screen controls.
         </p>
       </header>
 
-      <section class="hud" aria-label="Game statistics">
+      <section class="hud" aria-label="Mission statistics">
         <div class="stat-card">
           <span class="stat-label">Time</span>
-          <output id="time-output" class="stat-value" aria-label="Seconds remaining">20 s</output>
+          <span id="time-output" class="stat-value">20 s</span>
         </div>
         <div class="stat-card">
           <span class="stat-label">Score</span>
-          <output id="score-output" class="stat-value" aria-label="Current score">0 points</output>
+          <span id="score-output" class="stat-value">0</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Breaches</span>
+          <span id="breaches-output" class="stat-value">0</span>
         </div>
       </section>
 
-      <div class="controls" aria-label="Game controls">
+      <div class="round-controls" aria-label="Mission controls">
         <button id="start-button" class="control control-start" type="button">Start</button>
         <button id="restart-button" class="control control-restart" type="button" disabled>Restart</button>
         <button id="stop-button" class="control control-stop" type="button" disabled>Stop</button>
@@ -41,18 +45,58 @@
         Ready. Press Start when you are set.
       </p>
 
+      <section class="telemetry" aria-label="Text battlefield telemetry">
+        <div>
+          <span class="telemetry-label">Ship</span>
+          <span id="ship-output" class="telemetry-value">Lane 3</span>
+        </div>
+        <div>
+          <span class="telemetry-label">Invader</span>
+          <span id="enemy-output" class="telemetry-value">No invader</span>
+        </div>
+        <div>
+          <span class="telemetry-label">Range</span>
+          <span id="range-output" class="telemetry-value">—</span>
+        </div>
+      </section>
+
+      <div class="lane-labels" aria-hidden="true">
+        <span>L1</span><span>L2</span><span>L3</span><span>L4</span><span>L5</span>
+      </div>
       <div
-        id="board"
-        class="game-board"
+        id="battlefield"
+        class="battlefield"
         role="group"
-        aria-label="Four by four Bug Blaster grid"
-        aria-describedby="game-help"
+        tabindex="0"
+        aria-label="Glitch Squadron battlefield"
+        aria-describedby="game-help keyboard-help"
+        aria-keyshortcuts="ArrowLeft ArrowRight A D Space Enter"
       ></div>
 
+      <div class="flight-controls" aria-label="Ship controls">
+        <button id="move-left-button" class="flight-button" type="button" disabled>
+          <span aria-hidden="true">◀</span> Move Left
+        </button>
+        <button id="fire-button" class="flight-button fire-button" type="button" disabled>
+          <span aria-hidden="true">●</span> Fire
+        </button>
+        <button id="move-right-button" class="flight-button" type="button" disabled>
+          Move Right <span aria-hidden="true">▶</span>
+        </button>
+      </div>
+
+      <p id="keyboard-help" class="keyboard-help">
+        Keyboard: focus the battlefield, then use Left/Right or A/D to steer and
+        Space/Enter to fire. The invader is <strong>▼ INVADER</strong>; your ship is
+        <strong>▲ SHIP</strong>.
+      </p>
+
       <p class="workshop-note">
-        Something odd happens after repeated restarts. Your debugging mission is in
+        Something goes into hyper-speed after repeated Restarts. Your debugging mission is in
         <a href="./CHALLENGE.md">CHALLENGE.md</a>.
       </p>
+
+      <noscript>This game requires JavaScript. See TROUBLESHOOTING.md for setup help.</noscript>
     </main>
 
     <script type="module" src="./src/app.mjs"></script>

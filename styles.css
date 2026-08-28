@@ -1,6 +1,6 @@
 :root {
-  color: #111827;
-  background: #111827;
+  color: #f8fafc;
+  background: #070b18;
   font-family: Inter, ui-rounded, "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   font-synthesis: none;
   line-height: 1.5;
@@ -16,19 +16,19 @@ body {
   margin: 0;
   padding: 2rem 1rem;
   background:
-    radial-gradient(circle at top left, #312e81 0, transparent 38rem),
-    #111827;
+    radial-gradient(circle at 50% -10%, #3730a3 0, transparent 34rem),
+    #070b18;
 }
 
 .skip-link {
   position: fixed;
   top: 0.5rem;
   left: 0.5rem;
-  z-index: 10;
+  z-index: 20;
   padding: 0.7rem 1rem;
-  color: #111827;
-  background: #fbbf24;
-  font-weight: 800;
+  color: #07111f;
+  background: #facc15;
+  font-weight: 900;
   transform: translateY(-160%);
 }
 
@@ -37,13 +37,13 @@ body {
 }
 
 .game-shell {
-  width: min(100%, 42rem);
+  width: min(100%, 46rem);
   margin: 0 auto;
-  padding: clamp(1.25rem, 4vw, 2.5rem);
-  border: 4px solid #111827;
-  border-radius: 1.5rem;
-  background: #f8fafc;
-  box-shadow: 0.75rem 0.75rem 0 #fbbf24;
+  padding: clamp(1rem, 4vw, 2.25rem);
+  border: 3px solid #93c5fd;
+  border-radius: 1.25rem;
+  background: #0f172a;
+  box-shadow: 0.75rem 0.75rem 0 #facc15;
 }
 
 .hero {
@@ -52,36 +52,39 @@ body {
 
 .eyebrow {
   margin: 0;
-  color: #5b21b6;
-  font-size: 0.85rem;
+  color: #fde047;
+  font-size: 0.82rem;
   font-weight: 900;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 h1 {
   margin: 0.15rem 0 0.4rem;
-  font-size: clamp(2.2rem, 8vw, 4.25rem);
+  color: #fff;
+  font-size: clamp(2rem, 8vw, 4.25rem);
   line-height: 1;
+  text-transform: uppercase;
 }
 
 .intro {
-  max-width: 35rem;
+  max-width: 39rem;
   margin: 0.75rem auto 1.5rem;
+  color: #dbeafe;
 }
 
 .hud {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+  margin-bottom: 0.8rem;
 }
 
 .stat-card {
-  padding: 0.8rem 1rem;
-  border: 3px solid #111827;
-  border-radius: 0.75rem;
-  background: #ede9fe;
+  padding: 0.7rem 0.8rem;
+  border: 2px solid #60a5fa;
+  border-radius: 0.65rem;
+  background: #172554;
   text-align: center;
 }
 
@@ -90,51 +93,58 @@ h1 {
   display: block;
 }
 
-.stat-label {
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+.stat-label,
+.telemetry-label {
+  color: #bfdbfe;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 
 .stat-value {
-  font-size: 1.55rem;
+  color: #fff;
+  font-size: 1.45rem;
   font-weight: 900;
 }
 
-.controls {
+.round-controls,
+.flight-controls {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.6rem;
+  gap: 0.55rem;
 }
 
 button {
-  border: 3px solid #111827;
-  border-radius: 0.65rem;
+  min-height: 3rem;
+  border: 3px solid #e2e8f0;
+  border-radius: 0.6rem;
   font: inherit;
   font-weight: 850;
   cursor: pointer;
 }
 
 button:focus-visible,
-a:focus-visible {
-  outline: 4px solid #111827;
-  outline-offset: 3px;
+a:focus-visible,
+.battlefield:focus-visible {
+  outline: 4px solid #facc15;
+  outline-offset: 4px;
 }
 
 button:disabled {
   cursor: not-allowed;
   filter: grayscale(0.7);
-  opacity: 0.55;
+  opacity: 0.52;
 }
 
-.control {
-  min-height: 3rem;
-  padding: 0.55rem 0.7rem;
+.control,
+.flight-button {
+  padding: 0.55rem 0.65rem;
   color: #fff;
 }
 
-.control:not(:disabled):hover {
+.control:not(:disabled):hover,
+.flight-button:not(:disabled):hover {
   transform: translateY(-2px);
 }
 
@@ -152,74 +162,174 @@ button:disabled {
 
 .round-status {
   min-height: 3.25rem;
-  margin: 1rem 0;
+  margin: 0.9rem 0;
   padding: 0.7rem 0.9rem;
-  border-left: 0.45rem solid #5b21b6;
-  background: #f3f4f6;
+  border-left: 0.45rem solid #facc15;
+  background: #1e293b;
+  color: #fff;
   font-weight: 750;
 }
 
-.game-board {
+.telemetry {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.55rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 0.55rem;
 }
 
-.cell {
-  aspect-ratio: 1;
+.telemetry > div {
   min-width: 0;
-  color: #374151;
-  background: #fff;
-  font-size: clamp(0.8rem, 3vw, 1.1rem);
-}
-
-.cell:not(:disabled):hover {
-  background: #e0e7ff;
-}
-
-.cell.is-bug {
-  color: #111827;
-  background: #fbbf24;
-  box-shadow: inset 0 0 0 3px #fff;
-  animation: bug-pop 450ms ease-out;
-}
-
-.workshop-note {
-  margin: 1.25rem 0 0;
-  color: #374151;
-  font-size: 0.92rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid #64748b;
+  background: #111827;
   text-align: center;
 }
 
-.workshop-note a {
-  color: #4338ca;
+.telemetry-value {
+  display: block;
+  overflow-wrap: anywhere;
+  color: #fff;
   font-weight: 800;
 }
 
-@keyframes bug-pop {
-  0% {
-    transform: scale(0.82);
-  }
-  70% {
-    transform: scale(1.06);
-  }
-  100% {
-    transform: scale(1);
-  }
+.lane-labels {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.28rem;
+  margin-bottom: 0.25rem;
+  color: #bfdbfe;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-align: center;
 }
 
-@media (max-width: 30rem) {
+.battlefield {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.28rem;
+  padding: 0.35rem;
+  border: 3px solid #93c5fd;
+  border-radius: 0.65rem;
+  background: #020617;
+  box-shadow: inset 0 0 1.5rem #172554;
+}
+
+.battle-cell {
+  display: flex;
+  min-width: 0;
+  aspect-ratio: 1.45;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #334155;
+  background:
+    radial-gradient(circle at 72% 25%, #e2e8f0 0 1px, transparent 2px),
+    radial-gradient(circle at 20% 68%, #64748b 0 1px, transparent 2px),
+    #0b1224;
+  color: #fff;
+  line-height: 1;
+  text-align: center;
+}
+
+.battle-cell.is-enemy {
+  border: 3px solid #fff;
+  background: #b91c1c;
+  box-shadow: inset 0 0 0 2px #fca5a5;
+}
+
+.battle-cell.is-player {
+  border: 3px solid #fff;
+  background: #1d4ed8;
+  box-shadow: inset 0 0 0 2px #93c5fd;
+}
+
+.battle-cell.is-laser {
+  border-color: #fff;
+  background: #facc15;
+  color: #111827;
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.battle-cell.is-hit-laser {
+  background: #fb923c;
+}
+
+.entity-symbol {
+  display: block;
+  font-size: clamp(1rem, 4vw, 1.7rem);
+  font-weight: 900;
+}
+
+.entity-name {
+  display: block;
+  margin-top: 0.16rem;
+  font-size: clamp(0.46rem, 1.8vw, 0.7rem);
+  font-weight: 950;
+  letter-spacing: 0.04em;
+}
+
+.flight-controls {
+  margin-top: 0.75rem;
+}
+
+.flight-button {
+  background: #334155;
+}
+
+.fire-button {
+  color: #111827;
+  background: #facc15;
+}
+
+.keyboard-help,
+.workshop-note {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.keyboard-help {
+  margin: 0.8rem 0 0;
+}
+
+.workshop-note {
+  margin: 1.1rem 0 0;
+}
+
+.workshop-note a {
+  color: #fde047;
+  font-weight: 850;
+}
+
+noscript {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border: 2px solid #f87171;
+}
+
+@media (max-width: 36rem) {
   body {
-    padding: 1rem 0.65rem;
+    padding: 0.8rem 0.5rem;
   }
 
   .game-shell {
-    border-radius: 1rem;
-    box-shadow: 0.4rem 0.4rem 0 #fbbf24;
+    border-radius: 0.8rem;
+    box-shadow: 0.35rem 0.35rem 0 #facc15;
   }
 
-  .controls {
+  .hud,
+  .telemetry {
     grid-template-columns: 1fr;
+  }
+
+  .round-controls,
+  .flight-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .battle-cell {
+    aspect-ratio: 1.15;
   }
 }
 
@@ -231,5 +341,33 @@ button:disabled {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .game-shell,
+  .stat-card,
+  .round-status,
+  .telemetry > div,
+  .battlefield,
+  .battle-cell {
+    border-color: CanvasText;
+    background: Canvas;
+    color: CanvasText;
+    box-shadow: none;
+    forced-color-adjust: auto;
+  }
+
+  .battle-cell.is-enemy,
+  .battle-cell.is-player,
+  .battle-cell.is-laser {
+    border: 4px solid Highlight;
+    color: CanvasText;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  .battlefield:focus-visible {
+    outline-color: Highlight;
   }
 }

@@ -2,7 +2,7 @@
   "name": "codex-fix-the-glitch",
   "version": "1.0.0",
   "private": true,
-  "description": "A small, dependency-free Codex debugging workshop for university computer science students.",
+  "description": "A dependency-free top-down shooter debugging workshop for university computer science students.",
   "type": "module",
   "engines": {
     "node": ">=22"

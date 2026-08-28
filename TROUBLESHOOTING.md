@@ -53,6 +53,20 @@ Then open <http://127.0.0.1:4174>.
 - Check that the browser URL uses the same port printed by `npm start`.
 - Do not open `index.html` directly from Finder or File Explorer; use the local `http://127.0.0.1` address.
 
+## Steering or firing does not respond
+
+- Make sure the round is running; press **Start** first.
+- Use the visible Move Left, Fire, and Move Right buttons to confirm the game works independently of shortcut keys.
+- Return focus to the game page if the browser address bar, developer tools, or another application has focus.
+- Left/Right or A/D steers. Space/Enter fires. When a control button has focus, Enter or Space activates that focused button.
+- A shot scores only when the player and invader share a lane. The textual telemetry shows both lanes.
+
+## The game runs at hyper-speed after Restart
+
+On the untouched starter, this is the **intended defect for the challenge**. Do not refresh it away during the measured reproduction. Record the Time and invader telemetry, write your hypothesis, and then follow [CHALLENGE.md](CHALLENGE.md).
+
+After your fix, `npm test` must show six passes and zero TODOs. If it does but the browser still runs too fast, stop and restart `npm start`, refresh the page, inspect the complete diff, and give Codex at most one evidence-based correction.
+
 ## Codex cannot see the files
 
 - In the desktop app, open the cloned repository folder itself, not its parent or a ZIP archive.

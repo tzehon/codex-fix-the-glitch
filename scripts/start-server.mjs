@@ -64,6 +64,6 @@ const server = createServer(async (request, response) => {
 });
 
 server.listen(port, "127.0.0.1", () => {
-  console.log(`Bug Blaster is running at http://127.0.0.1:${port}`);
+  console.log(`Glitch Squadron is running at http://127.0.0.1:${port}`);
   console.log("Press Ctrl+C to stop the server.");
 });
