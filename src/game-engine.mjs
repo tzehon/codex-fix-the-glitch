@@ -162,7 +162,10 @@ export class GlitchSquadronGame {
     if (!Number.isFinite(randomValue)) {
       throw new TypeError("random must return a finite number");
     }
-    const boundedValue = Math.min(Math.max(randomValue, 0), 1 - Number.EPSILON);
+    const boundedValue = Math.min(
+      Math.max(randomValue, 0),
+      1 - Number.EPSILON,
+    );
     return Math.floor(boundedValue * this.#laneCount);
   }
 
