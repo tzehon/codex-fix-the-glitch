@@ -1,6 +1,6 @@
 # Debugging notes
 
-Keep each answer to one or two sentences. You may write here or use paper.
+Keep each answer to one or two sentences.
 
 ## Before Codex
 
@@ -8,11 +8,13 @@ Keep each answer to one or two sentences. You may write here or use paper.
 
    >
 
-2. **Hypothesis:** What is your best guess about why repeated Restarts make the game run too quickly?
-
-   >
+**Private hypothesis:** Before contacting Codex, write your one-sentence guess on paper or in a note outside this repository. Do not copy it into a project file yet because Codex can read those files.
 
 ## After Codex
+
+2. **Original hypothesis and comparison:** Copy your outside-the-project sentence here unchanged. How did it compare with Codex's diagnosis?
+
+   >
 
 3. **Root cause and fix:** What caused the observed behavior, and what was the smallest production change?
 

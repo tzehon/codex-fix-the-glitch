@@ -1,21 +1,17 @@
 # Workshop instructions for Codex
 
-This repository is a deliberately small debugging exercise. Follow these rules for the student task.
+This repository is a deliberately small debugging exercise. Treat the student's request as the task, investigate before editing, and follow these rules.
 
-## Allowed changes
+## Scope
 
-- You may edit only `src/game-engine.mjs` and `tests/game-engine.test.mjs`.
-- Make the smallest code change that fixes the reported repeated-Restart behavior.
-- Complete the unfinished test with one focused automated test that would have caught the reported behavior.
-- Preserve the exported `GlitchSquadronGame` class.
-- Preserve constructor options `durationSeconds`, `laneCount`, `travelRows`, `scheduler`, `random`, and `onChange`.
-- Preserve public methods `start()`, `restart()`, `moveLeft()`, `moveRight()`, `fire()`, and `stop()`.
-- Preserve the exact frozen snapshot fields `remainingSeconds`, `score`, `breaches`, `playerLane`, `enemyLane`, `enemyRow`, and `isRunning`.
-- Preserve steering bounds, firing and hit behavior, scoring, breaches, respawning, Stop, and time-expiry behavior.
+- Make the smallest code change that fixes the behavior reported by the student.
+- Keep production and test changes limited to the existing game logic and its test suite.
+- Preserve the exported game class, its current public API, the exact frozen snapshot shape, and unaffected gameplay behavior.
+- Complete one focused automated regression test that would catch the reported problem if it returned.
 
 ## Required verification
 
-- The new test must reproduce repeated Restarts and fail on the untouched starter.
+- The new test must fail on the untouched starter and pass with the fix.
 - Keep the test fast and reliable; do not wait for real time.
 - Run `npm test` after making changes.
 - Stop only when all six tests pass and there are no TODO tests.

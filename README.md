@@ -1,6 +1,6 @@
 # Codex: Fix the Glitch — Glitch Squadron
 
-Welcome to a short, hands-on debugging challenge. You will investigate a visible defect in **Glitch Squadron**, form a hypothesis, ask Codex for one bounded change, and verify the result yourself.
+Welcome to a short, hands-on debugging challenge. You will investigate a visible defect in **Glitch Squadron**, form a hypothesis, write your own focused request to Codex, and verify the result yourself.
 
 Glitch Squadron is a small top-down shooter with five lanes and seven rows. Steer the ship left or right, line up with the descending invader, and fire before it breaches the bottom row. The project uses only Node.js built-ins plus browser-native HTML, CSS, and JavaScript. There is no `npm install`, backend, or API key. The game and tests make no external network requests; `npm start` serves only this folder on your own computer.
 
@@ -8,7 +8,7 @@ Glitch Squadron is a small top-down shooter with five lanes and seven rows. Stee
 
 - Reproduce a bug before changing code.
 - State expected and actual behavior precisely.
-- Give Codex a focused task with a clear result.
+- Describe a focused Codex task in your own words.
 - Review everything Codex changes instead of accepting it blindly.
 - Add an automated check that catches the bug if it returns.
 
@@ -45,7 +45,7 @@ After npm's package-script banner, `npm run preflight` prints:
 
 ```text
 [ok] Node v<your-version> is supported
-[ok] Found all 9 required workshop files
+[ok] Found all 8 required workshop files
 [ok] No third-party packages are declared
 
 Preflight passed. You are ready to start the challenge.
@@ -111,7 +111,7 @@ OpenAI's [official desktop quickstart](https://learn.chatgpt.com/docs/quickstart
 
 The official [projects guide](https://learn.chatgpt.com/docs/projects) explains local projects, and the [Codex environments guide](https://learn.chatgpt.com/docs/environments/modes) explains Local, Worktree, and Cloud. Account, model, and exact control availability can vary, so complete this check before the session.
 
-At minute 10, paste the one bounded prompt from [STUDENT_PROMPT.md](STUDENT_PROMPT.md) into that new chat. To keep usage low, use at most one short correction based on concrete test or browser evidence. No exact credit amount is promised because usage and account limits vary; see OpenAI's current [Codex pricing guidance](https://learn.chatgpt.com/docs/pricing).
+At minute 10, use your observation to write one short request to Codex in your own words. State what you observed and what you expected, then ask Codex to investigate and repair the problem. Keep your hypothesis on paper or in a note outside this project until Codex reports its diagnosis. To keep usage low, use at most one evidence-based follow-up. No exact credit amount is promised because usage and account limits vary; see OpenAI's current [Codex pricing guidance](https://learn.chatgpt.com/docs/pricing).
 
 ## Repository map
 
@@ -119,7 +119,6 @@ At minute 10, paste the one bounded prompt from [STUDENT_PROMPT.md](STUDENT_PROM
 .
 ├── AGENTS.md                 Rules Codex must follow
 ├── CHALLENGE.md              Exercise instructions and success criteria
-├── STUDENT_PROMPT.md         The bounded prompt to give Codex
 ├── WORKSHEET.md              Short observation and verification notes
 ├── ACCESSIBILITY.md          Keyboard and accommodation guidance
 ├── TROUBLESHOOTING.md        Setup and runtime fixes

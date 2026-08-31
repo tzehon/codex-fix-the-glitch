@@ -69,14 +69,14 @@ Then open <http://127.0.0.1:4174>.
 
 On the untouched starter, this is the **intended defect for the challenge**. Do not refresh it away during the measured reproduction. Record the Time and invader telemetry, write your hypothesis, and then follow [CHALLENGE.md](CHALLENGE.md).
 
-After your fix, `npm test` should show all six tests passing. If the browser still runs too fast, stop and restart `npm start`, refresh the page, review every change, and give Codex at most one correction based on what you observed.
+After your fix, `npm test` should show all six tests passing. If the browser still runs too fast, stop and restart `npm start`, refresh the page, review every change, and give Codex at most one evidence-based follow-up.
 
 ## Codex cannot see the files
 
 - Under **Projects**, select the cloned `codex-fix-the-glitch` folder. If it is missing, add that folder as a local project; do not choose its parent or a ZIP archive.
 - Open the **ChatGPT dropdown** and select **Codex**.
 - With the student project selected, choose **New chat** and the **Local** environment.
-- Confirm the project files appear before sending the prompt.
+- Confirm the project files appear before sending your request.
 - If sign-in or Codex access is unavailable, tell the instructor; do not enter someone else's credentials or an unapproved API key.
 
 ## Tests do not match the expected starter counts

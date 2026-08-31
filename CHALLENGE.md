@@ -33,17 +33,26 @@ This reproduction does not require quick reflexes. Record the visible Time and t
 
 ## 3. Write a hypothesis (minutes 8–10)
 
-Write a one-sentence hypothesis in [WORKSHEET.md](WORKSHEET.md) **before** sending the prompt to Codex. A hypothesis can be wrong; it just needs to be specific enough to investigate.
+Write a one-sentence hypothesis on paper or in a note **outside this repository** before contacting Codex. A hypothesis can be wrong; it just needs to be specific enough to investigate. Do not put it in a project file yet because Codex can read those files. After Codex reports its diagnosis, copy your original sentence into [WORKSHEET.md](WORKSHEET.md) unchanged so you can compare the two.
 
-## 4. Give Codex one bounded task (minutes 10–19)
+## 4. Write your own Codex request (minutes 10–19)
 
-In the ChatGPT desktop app, select this clone under **Projects**, choose **Codex** from the ChatGPT dropdown, then start **New chat** in the **Local** environment. Copy the prompt from [STUDENT_PROMPT.md](STUDENT_PROMPT.md) into that chat.
+In the ChatGPT desktop app, select this clone under **Projects**, choose **Codex** from the ChatGPT dropdown, then start **New chat** in the **Local** environment.
 
-The repository includes rules that keep Codex focused on the relevant code. Let Codex inspect the project and decide how to approach the task.
+Do not paste a prepared prompt. Write one short request yourself. It should:
 
-Let it complete one primary attempt. If verification exposes a problem, use at most one short correction prompt that describes the evidence.
+- State what you observed and what you expected, using your measurements from step 2.
+- Ask Codex to investigate and fix the problem without naming a file or suggesting a cause.
+- Ask for a focused change and an automated check that would catch the same problem if it returned.
+- Ask Codex to run the checks, explain the cause in plain language, and tell you how to verify the result.
+
+The repository includes rules that keep Codex focused while leaving the diagnosis to it. Keep your outside-the-project hypothesis private until Codex reports its cause.
+
+Let Codex complete one primary attempt. If verification exposes a problem, use at most one short follow-up that describes the evidence.
 
 ## 5. Review what changed and run the checks (minutes 19–24)
+
+Copy your original hypothesis into [WORKSHEET.md](WORKSHEET.md) unchanged, then compare it with Codex's diagnosis.
 
 Open Codex's changes view and inspect every changed line. This before-and-after view is called a **diff**. If you prefer the terminal, run:
 
@@ -82,7 +91,7 @@ Also confirm that:
 
 ## 7. Correct once if needed, then debrief (minutes 27–30)
 
-If your evidence shows a remaining defect, give Codex at most one short correction prompt quoting that evidence. Rerun the tests and manual check, then record your root cause and final evidence in [WORKSHEET.md](WORKSHEET.md).
+If your evidence shows a remaining defect, give Codex at most one short follow-up quoting that evidence. Rerun the tests and manual check, then record your root cause and final evidence in [WORKSHEET.md](WORKSHEET.md).
 
 ## Success criteria
 

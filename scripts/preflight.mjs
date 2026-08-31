@@ -6,7 +6,6 @@ const repositoryRoot = fileURLToPath(new URL("../", import.meta.url));
 const requiredFiles = [
   "AGENTS.md",
   "CHALLENGE.md",
-  "STUDENT_PROMPT.md",
   "index.html",
   "styles.css",
   "src/app.mjs",
